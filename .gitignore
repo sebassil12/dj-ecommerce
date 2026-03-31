@@ -1,0 +1,72 @@
+# --- Seguridad (Crítico) ---
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# --- Entornos Virtuales ---
+.venv/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# --- Django ---
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+
+# --- Herramientas (uv, pyright, etc.) ---
+.target/
+.pyrightconfig.json
+.dmypy.json
+dmypy.json
+
+# --- Editores y Sistema ---
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# --- Pruebas / Cobertura ---
+htmlcov/
+.tox/
+.noseresults
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
