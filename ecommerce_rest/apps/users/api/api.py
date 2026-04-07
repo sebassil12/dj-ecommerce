@@ -1,7 +1,7 @@
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from users.api.serializers import UserSerializer
+from users.api.serializers import UserSerializer, UserListSerializer
 from users.models import User
 from rest_framework.decorators import api_view
 
@@ -9,8 +9,8 @@ from rest_framework.decorators import api_view
 def user_api_view(request):
 
     if request.method == 'GET':
-        users = User.objects.all()
-        user_serializer = UserSerializer(users, many=True)
+        users = User.objects.all().values('id', 'username', 'email', 'password')
+        user_serializer = UserListSerializer(users, many=True)
         return Response(user_serializer.data, status=status.HTTP_200_OK)
     
     if request.method == 'POST':
